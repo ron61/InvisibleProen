@@ -47,7 +47,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/ARKit2.0/UnityARObjectAnchor/UnityARObjectAnchor.unity
     guid: 9b7966300d2d04d8e86ace41d59d178c
-  - enabled: 1
+  - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/ARKit1.5/UnityARImageAnchor/UnityARImageAnchor.unity
     guid: befc06ba4fe0046439ef5dac5a33c0e7
+  - enabled: 1
+    path: Assets/Kudoh/ARTest.unity
+    guid: d4cf001b4d15e4d84ba2e2884482a81c
   m_configObjects: {}

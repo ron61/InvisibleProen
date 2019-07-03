@@ -12,7 +12,14 @@ public class GenerateImageAnchor : MonoBehaviour {
 	[SerializeField]
 	private GameObject prefabToGenerate;
 
-	private GameObject imageAnchorGO;
+    [SerializeField]
+    RuntimeAnimatorController runtimeAnimatorController;
+    [SerializeField]
+    Avatar avatar;
+    Animator animator;
+
+
+    private GameObject imageAnchorGO;
 
 	// Use this for initialization
 	void Start () {
@@ -30,8 +37,20 @@ public class GenerateImageAnchor : MonoBehaviour {
 			Quaternion rotation = UnityARMatrixOps.GetRotation (arImageAnchor.transform);
 
 			imageAnchorGO = Instantiate<GameObject> (prefabToGenerate, position, rotation);
-		}
-	}
+
+            //////////////////////////////////////////////////////////////////////////////////////////////
+
+            imageAnchorGO.AddComponent<Animator>();
+            animator = imageAnchorGO.GetComponent<Animator>();
+            animator.runtimeAnimatorController = runtimeAnimatorController;
+            animator.avatar = avatar;
+            animator.enabled = true;
+            animator.Play("state1");
+
+            //////////////////////////////////////////////////////////////////////////////////////////////
+
+        }
+    }
 
 	void UpdateImageAnchor(ARImageAnchor arImageAnchor)
 	{
@@ -43,8 +62,9 @@ public class GenerateImageAnchor : MonoBehaviour {
                 {
                     imageAnchorGO.SetActive(true);
                 }
-                imageAnchorGO.transform.position = UnityARMatrixOps.GetPosition(arImageAnchor.transform);
+                imageAnchorGO.transform.position = UnityARMatrixOps.GetPosition(arImageAnchor.transform) + new Vector3(0,1,0);
                 imageAnchorGO.transform.rotation = UnityARMatrixOps.GetRotation(arImageAnchor.transform);
+                imageAnchorGO.transform.Rotate(new Vector3(-90,90,0));
             }
             else if (imageAnchorGO.activeSelf)
             {
