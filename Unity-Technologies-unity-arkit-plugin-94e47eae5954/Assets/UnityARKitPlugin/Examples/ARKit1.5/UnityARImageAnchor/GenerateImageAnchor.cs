@@ -44,8 +44,9 @@ public class GenerateImageAnchor : MonoBehaviour {
             animator = imageAnchorGO.GetComponent<Animator>();
             animator.runtimeAnimatorController = runtimeAnimatorController;
             animator.avatar = avatar;
-            animator.enabled = true;
-            animator.Play("state1");
+            //animator.enabled = true;
+            animator.enabled = false;
+            //animator.Play("state1");
 
             //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,9 +63,9 @@ public class GenerateImageAnchor : MonoBehaviour {
                 {
                     imageAnchorGO.SetActive(true);
                 }
-                imageAnchorGO.transform.position = UnityARMatrixOps.GetPosition(arImageAnchor.transform) + new Vector3(0,1,0);
+                imageAnchorGO.transform.position = UnityARMatrixOps.GetPosition(arImageAnchor.transform) + new Vector3(-1,1,-2);
                 imageAnchorGO.transform.rotation = UnityARMatrixOps.GetRotation(arImageAnchor.transform);
-                imageAnchorGO.transform.Rotate(new Vector3(-90,90,0));
+                imageAnchorGO.transform.Rotate(new Vector3(0,90,90));
             }
             else if (imageAnchorGO.activeSelf)
             {

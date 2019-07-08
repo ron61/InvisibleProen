@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 500484700}
   - component: {fileID: 500484699}
   m_Layer: 0
-  m_Name: GenerateOssan
+  m_Name: GenerateShinkawa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   referenceImage: {fileID: 11400000, guid: 14c992e4027c94529b7cb3618dabe451, type: 2}
   prefabToGenerate: {fileID: 100140, guid: 2b0670568a1a75b42870dd118dfc95e1, type: 3}
-  runtimeAnimatorController: {fileID: 9100000, guid: 99259308874574cb58e7c8e4c327b17b,
+  runtimeAnimatorController: {fileID: 9100000, guid: b85f2a60686e84252a301212d0c31a05,
     type: 2}
   avatar: {fileID: 9000000, guid: 2b0670568a1a75b42870dd118dfc95e1, type: 3}
 --- !u!4 &500484700
