@@ -12,6 +12,12 @@ public class GenerateImageAnchor : MonoBehaviour {
     public Vector3 autdPos;
     public Vector3 autdScale;
 
+
+    public Material material;
+
+    private Material deskMaterial;
+    private Material autdMaterial;
+
 	[SerializeField]
 	private ARReferenceImage referenceImage;
 
@@ -33,6 +39,7 @@ public class GenerateImageAnchor : MonoBehaviour {
     public GameObject autd;
     public GameObject desk;
 
+
 	// Use this for initialization
 	void Start () {
 		UnityARSessionNativeInterface.ARImageAnchorAddedEvent += AddImageAnchor;
@@ -45,6 +52,7 @@ public class GenerateImageAnchor : MonoBehaviour {
         deskScale = new Vector3(1, 1, 1);
         autdPos = new Vector3(0, 0, 0);
         autdScale = new Vector3(1, 1, 1);
+
     }
 
 	void AddImageAnchor(ARImageAnchor arImageAnchor)
@@ -57,6 +65,14 @@ public class GenerateImageAnchor : MonoBehaviour {
 			shinkawa = Instantiate<GameObject> (prefabToGenerate1, position, rotation);    // shinkawaをinstantiate
             desk = Instantiate<GameObject> (prefabToGenerate2, position, rotation);    // deskをinstantiate
             autd = Instantiate<GameObject>(prefabToGenerate3, position, rotation);    // autdをinstantiate
+
+
+            deskMaterial = desk.GetComponent<MeshRenderer>().material;
+            
+            //desk.AddComponent<Renderer>();
+            //autd.AddComponent<Renderer>();
+            //deskMaterial = desk.GetComponent<Renderer>().material;
+            //autdMaterial = autd.GetComponent<Renderer>().material;
 
             // animation関連の処理
             shinkawa.AddComponent<Animator>();
@@ -91,8 +107,9 @@ public class GenerateImageAnchor : MonoBehaviour {
                 }
                 desk.transform.position = UnityARMatrixOps.GetPosition(arImageAnchor.transform) + deskPos;
                 desk.transform.rotation = UnityARMatrixOps.GetRotation(arImageAnchor.transform);
-                desk.transform.Rotate(new Vector3(0, 90, 90));
+                desk.transform.Rotate(new Vector3(0, 0, 90));
                 desk.transform.localScale = deskScale;
+                deskMaterial = material;
 
                 if (!autd.activeSelf)
                 {
@@ -102,6 +119,7 @@ public class GenerateImageAnchor : MonoBehaviour {
                 autd.transform.rotation = UnityARMatrixOps.GetRotation(arImageAnchor.transform);
                 autd.transform.Rotate(new Vector3(0, 90, 90));
                 autd.transform.localScale = autdScale;
+                //autdMaterial = material;
             }
             else if (shinkawa.activeSelf || desk.activeSelf || autd.activeSelf)
             {
@@ -117,9 +135,9 @@ public class GenerateImageAnchor : MonoBehaviour {
 	{
 		Debug.LogFormat("image anchor removed[{0}] : tracked => {1}", arImageAnchor.identifier, arImageAnchor.isTracked);
 		if (shinkawa || desk || autd) {
-			GameObject.Destroy (shinkawa);
-            GameObject.Destroy(desk);
-            GameObject.Destroy(autd);
+			Destroy (shinkawa);
+            Destroy(desk);
+            Destroy(autd);
         }
 
 	}
@@ -134,6 +152,6 @@ public class GenerateImageAnchor : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 }
