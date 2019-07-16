@@ -39,6 +39,8 @@ public class GenerateImageAnchor : MonoBehaviour {
     public GameObject autd;
     public GameObject desk;
 
+    MeshRenderer deskMeshRenderer;
+    MeshRenderer autdMeshRenderer;
 
 	// Use this for initialization
 	void Start () {
@@ -67,12 +69,8 @@ public class GenerateImageAnchor : MonoBehaviour {
             autd = Instantiate<GameObject>(prefabToGenerate3, position, rotation);    // autdをinstantiate
 
 
-            deskMaterial = desk.GetComponent<MeshRenderer>().material;
-            
-            //desk.AddComponent<Renderer>();
-            //autd.AddComponent<Renderer>();
-            //deskMaterial = desk.GetComponent<Renderer>().material;
-            //autdMaterial = autd.GetComponent<Renderer>().material;
+            deskMeshRenderer = desk.GetComponent<MeshRenderer>();
+            autdMeshRenderer = autd.GetComponent<MeshRenderer>();
 
             // animation関連の処理
             shinkawa.AddComponent<Animator>();
@@ -109,7 +107,7 @@ public class GenerateImageAnchor : MonoBehaviour {
                 desk.transform.rotation = UnityARMatrixOps.GetRotation(arImageAnchor.transform);
                 desk.transform.Rotate(new Vector3(0, 0, 90));
                 desk.transform.localScale = deskScale;
-                deskMaterial = material;
+                deskMeshRenderer.material = material;
 
                 if (!autd.activeSelf)
                 {
@@ -119,7 +117,7 @@ public class GenerateImageAnchor : MonoBehaviour {
                 autd.transform.rotation = UnityARMatrixOps.GetRotation(arImageAnchor.transform);
                 autd.transform.Rotate(new Vector3(0, 90, 90));
                 autd.transform.localScale = autdScale;
-                //autdMaterial = material;
+                autdMeshRenderer.material = material;
             }
             else if (shinkawa.activeSelf || desk.activeSelf || autd.activeSelf)
             {

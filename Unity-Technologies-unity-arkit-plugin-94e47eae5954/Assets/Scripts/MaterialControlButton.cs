@@ -11,16 +11,14 @@ public class MaterialControlButton : MonoBehaviour
 	[SerializeField]
 	Material standardMaterial;
 
-    Material arMaterial;
     int count;
 	GenerateImageAnchor generateImageAnchor;
-	float x, y, z;
 
 	private void Start()
 	{
 		generateImageAnchor = manager.GetComponent<GenerateImageAnchor>();
 		count = 0;
-        arMaterial = generateImageAnchor.material;
+        generateImageAnchor.material = standardMaterial;
 	}
 
 	public void OnClick()
@@ -28,11 +26,11 @@ public class MaterialControlButton : MonoBehaviour
 		// 透明なマテリアルと普通のマテリアルを交互に切り替える.
 		if (count == 0)
 		{
-			arMaterial = cutoutMaterial;
+            generateImageAnchor.material = cutoutMaterial;
 		}
 		else
 		{
-			arMaterial = standardMaterial;
+            generateImageAnchor.material = standardMaterial;
 		}
 
 		count = 1 - count;
