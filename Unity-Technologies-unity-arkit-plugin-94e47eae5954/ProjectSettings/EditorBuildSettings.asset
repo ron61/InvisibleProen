@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/UnityARShadows/UnityARShadows.unity
     guid: 14d17ec7304f440b48e6b953ba7a5895
-  - enabled: 0
+  - enabled: 1
     path: Assets/UnityARKitPlugin/Examples/UnityAROcclusion/UnityAROcclusion.unity
     guid: 7f026c59fb9d6489ab924c6e0e119760
   - enabled: 0
@@ -50,7 +50,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/ARKit1.5/UnityARImageAnchor/UnityARImageAnchor.unity
     guid: befc06ba4fe0046439ef5dac5a33c0e7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ARTest.unity
     guid: d4cf001b4d15e4d84ba2e2884482a81c
   m_configObjects: {}
