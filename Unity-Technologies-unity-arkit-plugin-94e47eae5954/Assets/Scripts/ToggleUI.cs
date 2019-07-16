@@ -61,8 +61,6 @@ public class ToggleUI : MonoBehaviour
     [SerializeField]
     GameObject startButton;
     [SerializeField]
-    GameObject poseButton;
-    [SerializeField]
     GameObject stopButton;
 
 
@@ -102,7 +100,6 @@ public class ToggleUI : MonoBehaviour
 
             materialButton.SetActive(false);
             startButton.SetActive(false);
-            poseButton.SetActive(false);
             stopButton.SetActive(false);
         }
         else
@@ -136,7 +133,6 @@ public class ToggleUI : MonoBehaviour
 
             materialButton.SetActive(true);
             startButton.SetActive(true);
-            poseButton.SetActive(true);
             stopButton.SetActive(true);
         }
         isActivated = !isActivated;
