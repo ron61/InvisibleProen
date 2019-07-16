@@ -32,7 +32,7 @@ public class GenerateImageAnchor : MonoBehaviour {
     RuntimeAnimatorController runtimeAnimatorController;
     [SerializeField]
     Avatar avatar;
-    Animator animator;
+    public Animator animator;
 
 
     public GameObject shinkawa;
@@ -77,9 +77,7 @@ public class GenerateImageAnchor : MonoBehaviour {
             animator = shinkawa.GetComponent<Animator>();
             animator.runtimeAnimatorController = runtimeAnimatorController;
             animator.avatar = avatar;
-            animator.enabled = true;
-            animator.Play("state1");
-
+            animator.enabled = false;
         }
     }
 
