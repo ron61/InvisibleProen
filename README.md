@@ -31,4 +31,6 @@ https://qiita.com/ritsuka/items/a8684c52f5320e068f32
 
 [Unityで始めるARkit入門](http://nn-hokuson.hatenablog.com/entry/2018/10/10/194736)
 
+[UnityでARKITを使うとき最初にやる準備/設定](https://qiita.com/kdmyk/items/4738cba9652ddc0eb6b2)
+
 
