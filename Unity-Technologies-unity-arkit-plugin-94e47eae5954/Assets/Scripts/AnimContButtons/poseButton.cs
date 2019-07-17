@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class poseButton : MonoBehaviour
 {
+    [SerializeField]
+    GameObject manager;
+    GenerateImageAnchor generateImageAnchor;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        generateImageAnchor = manager.GetComponent<GenerateImageAnchor>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClick()
     {
-        
+        generateImageAnchor.animator.enabled = false;
     }
 }

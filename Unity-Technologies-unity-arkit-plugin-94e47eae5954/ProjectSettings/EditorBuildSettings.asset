@@ -54,6 +54,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ARTest.unity
     guid: d4cf001b4d15e4d84ba2e2884482a81c
   - enabled: 1
-    path: Assets/Scenes/OcclusionTest.unity
+    path: Assets/Scenes/Main.unity
     guid: 2f572198854554769b55b27f61b6ba54
   m_configObjects: {}
