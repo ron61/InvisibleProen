@@ -38,12 +38,16 @@ public class GenerateImageAnchor : MonoBehaviour {
     public GameObject shinkawa;
     public GameObject autd;
     public GameObject desk;
+    // autdのPrefabは，本体と底板の二つからなる．それぞれのmeshrendererをいじるため，それぞれGameObjectとして取得する．
+    private GameObject autdChild1;
+    private GameObject autdChild2;
 
     MeshRenderer deskMeshRenderer;
-    MeshRenderer autdMeshRenderer;
+    MeshRenderer autdChild1MeshRenderer;
+    MeshRenderer autdChild2MeshRenderer;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		UnityARSessionNativeInterface.ARImageAnchorAddedEvent += AddImageAnchor;
 		UnityARSessionNativeInterface.ARImageAnchorUpdatedEvent += UpdateImageAnchor;
 		UnityARSessionNativeInterface.ARImageAnchorRemovedEvent += RemoveImageAnchor;
@@ -55,9 +59,10 @@ public class GenerateImageAnchor : MonoBehaviour {
         autdPos = new Vector3(0, 0, 0);
         autdScale = new Vector3(1, 1, 1);
 
+
     }
 
-	void AddImageAnchor(ARImageAnchor arImageAnchor)
+    void AddImageAnchor(ARImageAnchor arImageAnchor)
 	{
 		Debug.LogFormat("image anchor added[{0}] : tracked => {1}", arImageAnchor.identifier, arImageAnchor.isTracked);
 		if (arImageAnchor.referenceImageName == referenceImage.imageName) {
@@ -67,12 +72,15 @@ public class GenerateImageAnchor : MonoBehaviour {
 			shinkawa = Instantiate<GameObject> (prefabToGenerate1, position, rotation);    // shinkawaをinstantiate
             desk = Instantiate<GameObject> (prefabToGenerate2, position, rotation);    // deskをinstantiate
             autd = Instantiate<GameObject>(prefabToGenerate3, position, rotation);    // autdをinstantiate
+            autdChild1 = autd.transform.GetChild(0).gameObject;
+            autdChild2 = autd.transform.GetChild(1).gameObject;
 
 
             deskMeshRenderer = desk.GetComponent<MeshRenderer>();
-            autdMeshRenderer = autd.GetComponent<MeshRenderer>();
+            autdChild1MeshRenderer = autdChild1.GetComponent<MeshRenderer>();
+            autdChild2MeshRenderer = autdChild2.GetComponent<MeshRenderer>();
 
-            // animation関連の処理
+            // shinkawaのanimation関連の処理
             shinkawa.AddComponent<Animator>();
             animator = shinkawa.GetComponent<Animator>();
             animator.runtimeAnimatorController = runtimeAnimatorController;
@@ -115,7 +123,8 @@ public class GenerateImageAnchor : MonoBehaviour {
                 autd.transform.rotation = UnityARMatrixOps.GetRotation(arImageAnchor.transform);
                 autd.transform.Rotate(new Vector3(0, 90, 90));
                 autd.transform.localScale = autdScale;
-                autdMeshRenderer.material = material;
+                autdChild1MeshRenderer.material = material;
+                autdChild2MeshRenderer.material = material;
             }
             else if (shinkawa.activeSelf || desk.activeSelf || autd.activeSelf)
             {
@@ -148,6 +157,6 @@ public class GenerateImageAnchor : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        
+
     }
 }

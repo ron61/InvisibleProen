@@ -523,7 +523,8 @@ MonoBehaviour:
   referenceImage: {fileID: 11400000, guid: 14c992e4027c94529b7cb3618dabe451, type: 2}
   prefabToGenerate1: {fileID: 100140, guid: 2b0670568a1a75b42870dd118dfc95e1, type: 3}
   prefabToGenerate2: {fileID: 100002, guid: 4680028ade00e4bdaa3e3e79e38539d5, type: 3}
-  prefabToGenerate3: {fileID: 100002, guid: 6f4e9c4be6b224e1094ef08c84288ae1, type: 3}
+  prefabToGenerate3: {fileID: 3378171922104454120, guid: 71c7868d0e48c4ad3ac7ac4b45848f96,
+    type: 3}
   runtimeAnimatorController: {fileID: 9100000, guid: 99259308874574cb58e7c8e4c327b17b,
     type: 2}
   avatar: {fileID: 9000000, guid: 2b0670568a1a75b42870dd118dfc95e1, type: 3}
@@ -661,7 +662,6 @@ MonoBehaviour:
   autdsmallButton: {fileID: 3408653}
   materialButton: {fileID: 1978022417}
   startButton: {fileID: 1288540079}
-  poseButton: {fileID: 0}
   stopButton: {fileID: 1101749977}
 --- !u!114 &189543097
 MonoBehaviour:
