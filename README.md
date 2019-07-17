@@ -11,9 +11,11 @@
 
 ## Refs
 透明にするシェーダー．occlusion実装するのに使用した．
+
 http://nn-hokuson.hatenablog.com/entry/2017/06/01/220504
 
 Animationが最初からにできない問題．結局よくわからなかった．
+
 https://qiita.com/panti310/items/b4bae4c0c0087bd81f66
 
 たまにxcodeからビルドしようとするとき，build only device．．．と出てビルドできなくなる．
@@ -22,3 +24,7 @@ Xcode>Open Developer Tool>Simulator
 として
 Hardware>iOs>対象の端末
 としてからもう一度やり直すとできるようになる．
+
+子オブジェクトの取得
+
+http://kurowassan-app.fem.jp/wordpress/archives/1390/
