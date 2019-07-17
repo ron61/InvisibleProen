@@ -25,3 +25,10 @@ Hardware>iOs>対象の端末
 
 子オブジェクトの取得  
 http://kurowassan-app.fem.jp/wordpress/archives/1390/
+
+アニメーション作成  
+https://qiita.com/ritsuka/items/a8684c52f5320e068f32
+
+[Unityで始めるARkit入門](http://nn-hokuson.hatenablog.com/entry/2018/10/10/194736)
+
+
