@@ -21,7 +21,7 @@ Xcode>Open Developer Tool>Simulator
 Hardware>iOs>対象の端末
 としてからもう一度やり直すとできるようになる．
 
-子オブジェクトの取得  
+子オブジェクトの取得
 ```
 GameObject ChildObject;
 ChildObject = transform.GetChild(0).gameObject;
