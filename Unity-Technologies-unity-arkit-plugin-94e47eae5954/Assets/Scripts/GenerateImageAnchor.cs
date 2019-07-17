@@ -53,11 +53,11 @@ public class GenerateImageAnchor : MonoBehaviour {
 		UnityARSessionNativeInterface.ARImageAnchorRemovedEvent += RemoveImageAnchor;
 
         shinkawaPos = new Vector3(0, 0, 0);
-        shinkawaScale = new Vector3(1,1,1);
+        shinkawaScale = new Vector3(1f,1f,1f);
         deskPos = new Vector3(0, 0, 0);
-        deskScale = new Vector3(1, 1, 1);
+        deskScale = new Vector3(1f,1f,1f);
         autdPos = new Vector3(0, 0, 0);
-        autdScale = new Vector3(1, 1, 1);
+        autdScale = new Vector3(1f,1f,1f);
 
 
     }
