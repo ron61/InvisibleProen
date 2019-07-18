@@ -1,5 +1,12 @@
 # InvisibleProen
-2019年3Sプロジェクト演習
+2019年3Sプロジェクト演習のソースコード
+
+## 内容
+- UnityProject
+- demo.cpp
+  - 当日のデモで使用したatudのコード．
+- leapmotion_autd.cpp
+  - leapmotionでマイクロビーズを操作できるデモ用のautdのコード．
 
 ## 仕様
 - ToggleUI押すとボタンの表示非表示を切り替えられる
